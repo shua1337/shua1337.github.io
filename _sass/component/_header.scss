@@ -54,10 +54,10 @@
 .header__avatar--circle {
   display: block;
   box-sizing: border-box;
-  ///height: $header-avatar-height;
-  height: 1024px;
-  width: 1024px;
-  ///width: $header-avatar-height;
+  height: $header-avatar-height;
+  ///height: 1024px;
+  ///width: 1024px;
+  width: $header-avatar-height;
   border-radius: 15%;
 
   img {
