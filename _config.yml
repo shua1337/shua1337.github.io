@@ -1,57 +1,106 @@
-# basic
-# ============================================================================
-# if your site is serving on https://xxx.github.io, set `baseurl: /`
-# if your site is serving on https://xxx.github.io/path, set `baseurl: /path`
-baseurl: /
+### Site Settings ###
+title               : E. E. Whitaker
+description         : "Preacher, Teacher, Writer."
+baseurl             : ""                     # Change to empty quotes if you are hosting your site at <your-username>.github.io directly
+#repository          : YoussefRaafatNasry/portfolYOU     # Change to <your-username>/<your-username>.github.io (or remove it if you don't need remote projects)
+#remote_theme        : YoussefRaafatNasry/portfolYOU
+open_new_tab        : false                             # Opens external URLs in new tab (works for posts, projects and navbar only)
 
-# site title
-title: eewhitaker
 
-# site favicon, absolute path required
-favicon: /assets/img/favicon.ico
+### Plugins ###
+plugins:
+  - jemoji
 
-# home button image, absolute path requried
-avatar: /assets/img/avatar.jpg
-# specify meaningful description for your avatar
-avatarInfo: "Author"
 
-# default variables for post-type page
+### Navbar Settings ###
+nav_exclude:                                            # The following paths are excluded from navbar
+  - pages/tags.html
+  - pages/404.html
+  - pages/index.md
+  #- documentation/partials/**                           # For Documentation Only
+
+
+### Author Info ###
+author:
+  name              : eewhitaker.com
+  #image             : https://i.imgur.com/HNGHmJu.jpeg
+  image             : /assets/avatar.jpg
+#  behance           : your_username
+# dribbble          : your_username
+  email             : info@eewhitaker.com
+#  facebook          : your_username
+#  github            : your_username
+# gitlab            : your_username
+  instagram         : novels_eewhitaker
+# kaggle            : your_username
+#  linkedin          : your_username
+#  medium            : your_username
+# soundcloud        : your_username
+# spotify           : your_username
+# stackoverflow     : your_user_id
+# tumblr            : your_username.tumblr.com
+# twitch            : your_username
+#  twitter           : your_username
+# vimeo             : your_username
+# youtube           : your_channel_name
+# keybase           : your_username
+
+
+### Posts ###
+permalink: /blog/:title
+
+
+### Collections ###
+collections:
+  projects:
+    output: true
+    permalink: /projects/:name
+  Books:
+    output: true
+    permalink: /Books/
+  #elements:                                             # For Documentation Only
+  #  output: true                                        # For Documentation Only
+
+
+### Disqus ###
+disqus:
+  shortname: your-short-name-disqus                     # Your website Shortname on disqus
+
+
+### Analytics ###
+analytics:
+  enabled: True                                        # Set true to enable analytics
+  google:
+    tracking_id: G-6JW1LK7S28
+
+
+### Buy me a coffee ###
+# See https://www.buymeacoffee.com/
+#buymeacoffee:
+#  enabled: false
+#  username: your_username
+#  color: "#007bff"
+#  message: "Thank you for visiting."                    # Message to be displayed aside from the button for a few seconds.
+#  description: "Support me on Buy me a coffee!"
+
+
+### Defaults for collections ###
 defaults:
-  -
-    scope:
+  - scope:
       path: ""
-      type: posts
+      type: "Books"
     values:
-      layout: post
-      comment: true
+      layout: "page"
+  - scope:
+      path: ""
+      type: "Bio"
+    values:
+      comments: "page"                                  # Set to true to enable disqus comments
 
 
-# sass
-# ============================================================================
-sass:
-  sass_dir: _sass
-  style: compressed
-
-
-# exclude none site related files
-# ============================================================================
+### Exclude from processing ###
 exclude:
   - README.md
+  - CONTRIBUTING.md
   - LICENSE
-  - github
-  - package.json
-  - package-lock.json
-  - node_modules
-
-
-# google analytics
-# ============================================================================
-# turn it off -> ga: false
-ga: G-6JW1LK7S28
-
-
-# disqus
-# ============================================================================
-# turn it off for all posts -> disqus: false
-# turn it off for a particular post -> add `comment: false` to post front matter
-disqus: false
+  - "*.log"

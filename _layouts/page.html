@@ -1,29 +1,7 @@
-<!DOCTYPE html>
-<html>
-<head>
+---
+layout: default
+---
 
-  {% include head.html %}
-
-  <link rel="stylesheet" href="{{ 'assets/css/page.css' | relative_url }}" media="all">
-
-</head>
-<body>
-
-  <div class="page-content clear-header--top clear-navbar--top clear-footer--bottom">
-
-    {% include header.html %}
-
-    {% include navigation.html %}
-
-    <main class="main clear-header--left">
-
-    {{ content }}
-
-    </main>
-
-    {% include footer.html %}
-
-  </div>
-
-</body>
-</html>
+<div class="col-lg-10 mx-auto mt-5 markdown-body">
+  {{ content }}
+</div>
